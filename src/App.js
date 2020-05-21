@@ -3,6 +3,7 @@ import Form from './components/form/form';
 import Result from './components/results/results';
 
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +34,8 @@ class App extends React.Component {
           name={this.state.name}/>
           <Result  handleResult={this.state.handleResult} 
           count={this.state.count} 
-          headers={this.state.headers}/>
+          headers={this.state.headers}
+          name={this.state.name}/>
           </>
         )
     }
