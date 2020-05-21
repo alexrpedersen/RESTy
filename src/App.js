@@ -17,15 +17,16 @@ class App extends React.Component {
     }
   }
     
-  handleForm = (count, results, method) => {
-    this.setState({ count, results, method })
+  handleForm = (count, results, method, headers) => {
+    this.setState({ count, results, method, headers })
   }
 
-  handleResult = (count,name) => {
-    this.setState({count,name})
+  handleResult = (count,results, name) => {
+    this.setState({count,results,name})
   }
   
   render() {
+    console.log('******', this.state);
         return(
           <>
           <Form handleForm={this.handleForm}
@@ -35,7 +36,8 @@ class App extends React.Component {
           <Result  handleResult={this.state.handleResult} 
           count={this.state.count} 
           headers={this.state.headers}
-          name={this.state.name}/>
+          name={this.state.name}
+          results={this.state.results}/>
           </>
         )
     }
