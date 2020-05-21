@@ -1,6 +1,8 @@
 import React from 'react';
 import './results.scss';
-const PrettyJson = require('pretty-print-json');
+const prettyPrintJson = require('pretty-print-json');
+
+
 
 class Result extends React.Component {
     constructor(props) {
@@ -14,9 +16,7 @@ class Result extends React.Component {
     render() {
         return(
           <>
-            <span>Total Pokemon: {this.props.count}</span>
-            <PrettyJson data={this.props.headers} ></PrettyJson>
-            <PrettyJson data={this.props.name} ></PrettyJson>
+            <h3>Total Pokemon: prettyPrintJson.toHtml({this.props.count})</h3>
           </>
         )
       }
