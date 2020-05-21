@@ -1,18 +1,25 @@
-// import React from 'react';
-// import './results.scss';
-// import Form from '../form/form';
+import React from 'react';
+import './results.scss';
+const PrettyJson = require('pretty-print-json');
 
-// class Result extends React.Component {
-//     constructor(props) {
-//         super(props)
+class Result extends React.Component {
+    constructor(props) {
+        super(props)
 
-//         this.state = {
-//             count: 0,
-//             apiurl: '',
-//             results: '',
-//             name:''
-//         }
-//     }
-// }
+        this.state = {
+    
+        } 
+    }
 
-// // export default Result;
+    render() {
+        return(
+          <>
+            <span>Total Pokemon: {this.props.count}</span>
+            <PrettyJson data={this.props.headers} ></PrettyJson>
+            <PrettyJson data={this.props.name} ></PrettyJson>
+          </>
+        )
+      }
+}
+
+export default Result;

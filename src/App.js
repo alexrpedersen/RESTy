@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from './components/form/form';
-// import './app.scss';
+import Result from './components/results/results';
 
 
 class App extends React.Component {
@@ -11,7 +11,8 @@ class App extends React.Component {
       count: 0,
       results: '',
       method: 'GET',
-      name:''
+      name:'',
+      headers: ''
     }
   }
     
@@ -27,10 +28,12 @@ class App extends React.Component {
         return(
           <>
           <Form handleForm={this.handleForm}
-          method={this.state.method}
           count={this.state.count}
           results={this.state.results}
           name={this.state.name}/>
+          <Result  handleResult={this.state.handleResult} 
+          count={this.state.count} 
+          headers={this.state.headers}/>
           </>
         )
     }
