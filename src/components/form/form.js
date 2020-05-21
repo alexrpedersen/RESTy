@@ -24,11 +24,13 @@ class Form extends React.Component {
     makeApiCall = async () => {
         const raw = await fetch(`${this.state.apiurl}`);
         const data = await raw.json();
-        this.setState({
-          results: data,
-          count: data.count,
-          name: data.results[0].name
-        })
+        this.props.handleForm(
+            data.count,
+            data.results,
+            this.state.currentMethod,
+            data.headers
+
+        )
       }
     
       logValue = (e) => {

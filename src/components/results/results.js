@@ -1,7 +1,6 @@
 import React from 'react';
 import './results.scss';
-const prettyPrintJson = require('pretty-print-json');
-
+import JSONPretty from 'react-json-pretty';
 
 
 class Result extends React.Component {
@@ -9,14 +8,17 @@ class Result extends React.Component {
         super(props)
 
         this.state = {
-    
+          count: 0
         } 
     }
 
     render() {
+      console.log('***',this.props);
         return(
           <>
-            <h3>Total Pokemon: prettyPrintJson.toHtml({this.props.count})</h3>
+          <p>Total Pokemon: </p>
+          <JSONPretty id="json-pretty" data={this.props.count}></JSONPretty>
+          <JSONPretty data={this.props.results}></JSONPretty>
           </>
         )
       }
